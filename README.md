@@ -1,5 +1,9 @@
 # elk-run
-记录elk的坑
+
+一、推荐实践
+  1、差异化冷数据与热数据的副本数。最近3天的index的副本设置为2；超过3天的index的副本数设置为1。
+
+二、记录elk的坑
 
 环境描述：集群由node-a、node-b、node-c三台机器组成。每个node既是master节点，又是data节点。
 
@@ -13,3 +17,5 @@
 
 故障三：node-a宕机重启，恢复缓慢
 原因：node-a owner的indes，逐渐提升到1/3
+
+
